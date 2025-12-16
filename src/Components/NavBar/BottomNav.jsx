@@ -16,7 +16,7 @@ const BottomNav = () => {
   return (
     <section className="w-screen fixed bottom-0 h-16 px-4 bg-gray-800 flex justify-around items-center">
       
-      <button onClick={() => navigate("/")} className={navClass("/")}>
+      <button onClick={() => navigate("/home")} className={navClass("/")}>
         <House />
         <p className="text-xs">Home</p>
       </button>
