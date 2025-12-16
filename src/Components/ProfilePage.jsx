@@ -82,6 +82,7 @@ import {
   Moon,
   Camera,
 } from "lucide-react";
+import BottomNav from "./NavBar/BottomNav";
 
 const ProfilePage = () => {
   // =========================
@@ -249,6 +250,7 @@ const ProfilePage = () => {
           </ul>
         </div>
       </div>
+      <BottomNav />
     </div>
   );
 };
