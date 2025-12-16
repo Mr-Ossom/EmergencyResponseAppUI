@@ -1,39 +1,43 @@
-import React from 'react'
-import {House} from 'lucide-react'
-import {Users} from 'lucide-react'
-import {Lightbulb} from 'lucide-react'
-import {CircleUser} from 'lucide-react'
-import { useNavigate } from 'react-router-dom'
-
+import React from "react";
+import { House, Users, Lightbulb, CircleUser } from "lucide-react";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const BottomNav = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const isActive = (path) => location.pathname === path;
+
+  const navClass = (path) =>
+    `flex flex-col items-center transition ${
+      isActive(path) ? "text-blue-500" : "text-white"
+    }`;
+
   return (
-    <div>
-      <section className='w-screen fixed bottom-0 h-16 py-4 px-4 bg-gray-800 flex justify-around items-center'>
-        <button onClick={() => navigate('/')} className='text-white items-center flex flex-col'>
-            <House />
-            <p>Home</p>
-        </button>
+    <section className="w-screen fixed bottom-0 h-16 px-4 bg-gray-800 flex justify-around items-center">
+      
+      <button onClick={() => navigate("/")} className={navClass("/")}>
+        <House />
+        <p className="text-xs">Home</p>
+      </button>
 
-        <button onClick={() => navigate('/src/Components/Contacts.jsx')} className='text-white items-center flex flex-col'>
-            <Users />
-            <p>Contacts</p>
-        </button>
+      <button onClick={() => navigate("/contacts")} className={navClass("/contacts")}>
+        <Users />
+        <p className="text-xs">Contacts</p>
+      </button>
 
-        <button onClick={() => navigate('/src/Components/TipsPage.jsx')} className='text-white items-center flex flex-col'>
-            <Lightbulb />
-            <p>Safety Tips</p>
-        </button>
+      <button onClick={() => navigate("/tips")} className={navClass("/tips")}>
+        <Lightbulb />
+        <p className="text-xs">Safety Tips</p>
+      </button>
 
-        <button className='text-white items-center flex flex-col'>
-            <CircleUser />
-            <p>Profile</p>
-        </button>
+      <button onClick={() => navigate("/profile")} className={navClass("/profile")}>
+        <CircleUser />
+        <p className="text-xs">Profile</p>
+      </button>
 
-      </section>
-    </div>
-  )
-}
+    </section>
+  );
+};
 
-export default BottomNav
+export default BottomNav;

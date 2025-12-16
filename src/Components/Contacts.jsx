@@ -55,7 +55,7 @@ const Contacts = () => {
                 <Phone size={30} />
               </a>
 
-              <a href={`tel:${contact.phone}`} className="border-2 border-gray-200 px-4 py-4 rounded-full font-semibold">
+              <a href={`sms:${contact.phone}`} className="border-2 border-gray-200 px-4 py-4 rounded-full font-semibold">
               <MessageSquare size={30} />
             </a>
             </div>
@@ -72,13 +72,13 @@ const Contacts = () => {
 
       {/* ADD CONTACT MODAL */}
       {showForm && (
-        <div className="fixed inset-0 bg-black/60 flex items-center">
+        <div className="fixed inset-0 bg-black/60 flex items-center px-5">
           <div className="bg-[#00000080] w-full p-5 rounded-2xl">
             <h2 className="text-xl text-white text-center font-semibold mb-3">Add Contact</h2>
 
-            <input type="text" name="name" placeholder="Contact name" value={formData.name} onChange={handleChange} className="w-full mb-3 bg-transparent border-b-4 border-gray-600 placeholder:text-white text-xl text-start focus:border-blue-500 outline-none py-2" />
+            <input type="text" name="name" placeholder="Contact name" value={formData.name} onChange={handleChange} className="w-full text-white mb-3 bg-transparent border-b-4 border-gray-600 placeholder:text-white text-xl text-start focus:border-blue-500 outline-none py-2" />
 
-            <input type="tel" name="phone" placeholder="Phone number" value={formData.phone} onChange={handleChange} className="w-full mb-5 bg-transparent border-b-4 border-gray-600 placeholder:text-white text-xl text-start focus:border-blue-500 outline-none py-2" />
+            <input type="tel" name="phone" placeholder="Phone number" value={formData.phone} onChange={handleChange} className="w-full text-white mb-5 bg-transparent border-b-4 border-gray-600 placeholder:text-white text-xl text-start focus:border-blue-500 outline-none py-2" />
 
             <div className="flex justify-between">
               <button onClick={() => setShowForm(false)} className="bg-red-600 px-6 py-2 rounded-lg font-semibold text-gray-100">

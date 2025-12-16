@@ -7,18 +7,20 @@ import FireFightersPage from './Components/FireFightersPage'
 import RelativePage from './Components/RelativePage'
 import Contacts from './Components/Contacts'
 import TipsPage from './Components/TipsPage'
+import ProfilePage from './Components/ProfilePage'
 
 const App = () => {
   return (
     <HashRouter>
     <Routes>
       <Route path='/' element={<Home />} />
-      <Route path='/src/Components/Contacts.jsx' element={<Contacts />} />
-      <Route path='/src/Components/TipsPage.jsx' element={<TipsPage />} />
-      <Route path='/src/Components/PolicePage.jsx' element={<PolicePage />} />
-      <Route path='/src/Components/AmbulancePage.jsx' element={<AmbulancePage />} />
-      <Route path='/src/Components/FireFightersPage.jsx' element={<FireFightersPage />} />
-      <Route path='/src/Components/RelativePage.jsx' element={<RelativePage />} />
+      <Route path='/contacts' element={<Contacts />} />
+      <Route path='/tips' element={<TipsPage />} />
+      <Route path='/profile' element={<ProfilePage />} />
+      <Route path='/police' element={<PolicePage />} />
+      <Route path='/ambulance' element={<AmbulancePage />} />
+      <Route path='/firefighters' element={<FireFightersPage />} />
+      <Route path='/relative' element={<RelativePage />} />
     </Routes>
       
     </HashRouter>
