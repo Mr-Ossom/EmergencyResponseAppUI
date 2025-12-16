@@ -12,7 +12,7 @@ const Home = () => {
   return (
     <div>
         <TopNav />
-            <section className='w-screen py-16 px-10 h-[calc(100vh-8rem)] bg-gray-200 space-x-4 justify-center items-center grid grid-cols-2 '>
+            <section className='w-screen py-16 px-10 h-[calc(100vh-8rem)] bg-white space-x-4 justify-center items-center grid grid-cols-2 '>
                 <button onClick={() => navigate('/src/Components/PolicePage.jsx')} className='items-center h-40 flex flex-col border-2 border-gray-400 rounded-lg p-4 shadow-md bg-white hover:bg-gray-100'>
                     <ShieldAlert size={70} color='blue ' />
                     <p className='text-2xl text-blue-800 font-semibold'>Police</p>
