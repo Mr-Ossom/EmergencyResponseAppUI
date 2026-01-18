@@ -1,22 +1,50 @@
 import React from 'react'
 import {PhoneCall} from 'lucide-react'
-import TopNav from './NavBar/TopNav'
+import TopNavBack from './NavBar/TopNavBack'
 import {ShieldCheck} from 'lucide-react'
 import BottomNav from './NavBar/BottomNav'
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import DispatchLoadingModal from './DispatchLodingModal'
+
 
 const PolicePage = () => {
+     const [loading, setLoading] = useState(false);
+     const navigate = useNavigate();
+
+     const handleTrackDispatch = () => {
+     setLoading(true);
+
+    // simulate connecting to dispatch
+     setTimeout(() => {
+      navigate("/dispatch-tracking");
+     }, 2000);
+   };
+
   return (
     <div>
-        <TopNav />
+        <TopNavBack />
         
-      <section className='w-screen flex-1 overflow-y-auto pb-20 h-[200%] flex flex-col justify-center items-center bg-blue-100'>
+      <section className='w-screen pt-14 flex-1 overflow-y-auto pb-20 h-[200%] flex flex-col justify-center items-center bg-blue-100'>
         
         <button className='items-center mt-10 h-50 w-50 space-y-0.01 flex flex-col border-2 border-red-400 rounded-full p-4 shadow-lg animate-pulse bg-red-600'>
             <PhoneCall size={50} color='white' />
             <h1 className='text-4xl text-amber-100 font-semibold mt-4'>SOS</h1>
             <p className='text-center text-gray-200 mt-2'>Tap to Call Police</p>
         </button>
-<h1 className='mt-14 text-2xl pl-8 font-semibold w-full self-start underline'>Safety Tips</h1>
+
+        <div className="w-40 h-10 mt-12 flex justify-center">
+  <button
+    onClick={handleTrackDispatch}
+    className="bg-blue-600 px-2 text-white text-lg rounded-lg hover:bg-blue-700 transition">
+    Track Dispatch
+  </button>
+</div>
+{loading && <DispatchLoadingModal />}
+
+
+
+        <h1 className='mt-14 text-2xl pl-8 font-semibold w-full self-start underline'>Safety Tips</h1>
 
         <div className='w-full flex flex-col justify-center items-center'>
             

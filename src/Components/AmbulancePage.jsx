@@ -1,5 +1,5 @@
 import React from 'react'
-import TopNav from './NavBar/TopNav';
+import TopNavBack from './NavBar/TopNavBack';
 import BottomNav from './NavBar/BottomNav';
 import { Ambulance } from 'lucide-react';
 import { MapPin } from 'lucide-react';
@@ -10,9 +10,9 @@ import { HandHelping } from 'lucide-react';
 const AmbulancePage = () => {
   return (
     <div>
-        <TopNav />
+        <TopNavBack />
 
-      <section className='w-screen flex-1 overflow-y-auto pb-20 h-[200%] flex flex-col justify-center items-center bg-blue-100'>
+      <section className='w-screen pt-14 flex-1 overflow-y-auto pb-20 h-[200%] flex flex-col justify-center items-center bg-blue-100'>
         <button className='items-center mt-10 h-60 pt-5 w-60 space-y-0.01 flex flex-col border-none rounded-full p-4 shadow-lg animate-pulse bg-blue-600'>
             <Ambulance size={70} color='white' />
             <h1 className='text-xl text-amber-100 font-semibold mt-4'>Call Ambulance</h1>

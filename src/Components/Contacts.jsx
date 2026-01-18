@@ -26,10 +26,9 @@ const Contacts = () => {
   };
 
   return (
-  <div>
+  <div className="max-h-[80%]">
       <TopNav pageName="Emergency Contacts" />
-      {/* <h1 className="text-xl font-bold mb-4">Emergency Contacts</h1> */}
-
+      
     <div className="h-screen bg-[#F9F8F6] text-black px-4 pt-10">
       {/* EMPTY STATE */}
       {contacts.length === 0 && (
